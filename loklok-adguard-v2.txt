@@ -1,0 +1,71 @@
+! Title: Loklok 3.29.0 - AdGuard DNS Candidate Blocklist v2
+! Purpose: Block advertising / attribution endpoints identified from static APK analysis
+! plus the Adjust click/impression endpoints observed in runtime.
+! IMPORTANT: Some SDKs share infrastructure with non-ad functions. Verify Query Log
+! after enabling. Do not block Loklok API/CDN domains unless independently confirmed.
+!
+! AdGuard syntax: ||domain^ blocks the domain and its subdomains.
+
+! ===== OBSERVED: Adjust attribution / ad click =====
+||app.adjust.com^
+||view.adjust.com^
+
+! ===== Google Mobile Ads / Google ad serving candidates =====
+||googleads.g.doubleclick.net^
+||ad.doubleclick.net^
+||securepubads.g.doubleclick.net^
+||pagead.googlesyndication.com^
+||googleadservices.com^
+||googlesyndication.com^
+
+! ===== AppLovin candidates =====
+||applovin.com^
+||applvn.com^
+||applovin.dev^
+
+! ===== Pangle / ByteDance advertising candidates =====
+||pangle.io^
+||pangleglobal.com^
+
+! ===== Meta Audience Network =====
+! Deliberately NOT blocking facebook.com / connect.facebook.net:
+! root Meta domains are too broad and may affect unrelated functions.
+
+! ===== Mintegral / MBridge =====
+||mintegral.com^
+||mintegral.net^
+
+! ===== Moloco =====
+||moloco.com^
+
+! ===== Vungle =====
+||vungle.com^
+
+! ===== PubNative =====
+||pubnative.net^
+||pubnative.com^
+
+! ===== TaurusX =====
+||taurusx.com^
+
+! ===== TradPlus =====
+||tradplusad.com^
+||tradplus.com^
+
+! ===== Maticoo / Zmaticoo =====
+||maticoo.com^
+||zmaticoo.com^
+
+! ===== Generic advertising / measurement candidates =====
+||adsrvr.org^
+||adnxs.com^
+||criteo.com^
+||criteo.net^
+
+! ===== DO NOT BLOCK automatically =====
+! Loklok API/authentication
+! Video/CDN
+! Images/posters
+! Payment/Google Play Billing
+! Core WebView domains
+! Analytics domains unless confirmed non-essential
