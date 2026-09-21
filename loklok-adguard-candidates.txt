@@ -1,0 +1,68 @@
+! Title: Loklok 3.29.0 - Ad/Tracking Candidate Blocklist
+! Purpose: Candidate AdGuard DNS rules derived from static analysis of Loklok 3.29.0.
+! IMPORTANT: SDK presence in the APK does not prove every domain below is used at runtime.
+! Test with AdGuard DNS Query Log and whitelist any domain that breaks login, playback, images, or other app functions.
+! Format: AdGuard DNS / Adblock-style rules
+
+! ===== Google Mobile Ads / Google ad serving =====
+||googleads.g.doubleclick.net^
+||ad.doubleclick.net^
+||securepubads.g.doubleclick.net^
+||pagead2.googlesyndication.com^
+||googleadservices.com^
+||googlesyndication.com^
+
+! ===== AppLovin =====
+||applovin.com^
+||applvn.com^
+||applovin.dev^
+
+! ===== Pangle / ByteDance Ads =====
+||pangle.io^
+||pangleglobal.com^
+||bytedance.com^
+
+! ===== Meta Audience Network =====
+||facebook.com^
+||connect.facebook.net^
+
+! ===== Mintegral / MBridge =====
+||mintegral.com^
+||mintegral.net^
+
+! ===== Moloco =====
+||moloco.com^
+
+! ===== Vungle =====
+||vungle.com^
+
+! ===== PubNative =====
+||pubnative.net^
+||pubnative.com^
+
+! ===== TaurusX =====
+||taurusx.com^
+
+! ===== TradPlus =====
+||tradplusad.com^
+||tradplus.com^
+
+! ===== Maticoo / Zmaticoo =====
+||maticoo.com^
+||zmaticoo.com^
+
+! ===== Generic ad/measurement endpoints seen commonly with mobile ad stacks =====
+||adsrvr.org^
+||adnxs.com^
+||criteo.com^
+||criteo.net^
+
+! ===== DO NOT BLOCK automatically =====
+! The following categories were found in the APK architecture but must be
+! verified from runtime DNS logs before blocking:
+! - Loklok API/authentication domains
+! - video/CDN domains
+! - payment/billing domains
+! - Google Play services domains
+! - analytics domains shared with core application functions
+! - any domain used by WebView content
